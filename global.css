@@ -30,5 +30,6 @@
 
 
 body {
-  padding: 20px;
+  padding: 30px;
+  background-color: var(--bg-primary);
 }
