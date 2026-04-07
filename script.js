@@ -1,9 +1,36 @@
-const guests = document.querySelector("ul")
+const itens = document.getElementById("itens")
+const newItem = document.getElementById("newItem")
+const addItem = document.getElementById("addItem")
+const textItem = document.getElementById("textItem")
 
-const newGuest = document.querySelector("li")
+addItem.addEventListener("click", (event) => {
+  event.preventDefault()
 
-const itens = []
+  const textValue = textItem.value
 
-function newItem(title) {
-  
-}
+  if (textValue === "") return
+
+  const clonedItem = newItem.cloneNode(true)
+
+  clonedItem.classList.remove("hidden")
+
+  const text = clonedItem.querySelector("p")
+  text.textContent = textValue
+
+  clonedItem.removeAttribute("id")
+
+  itens.appendChild(clonedItem)
+
+  textItem.value = ""
+})
+
+const removeBtn = document.getElementById("remove")
+
+itens.addEventListener("click", (event) => {
+  const botao = event.target.closest("button")
+
+  if (!botao) return
+
+  const li = botao.closest("li")
+  li.remove()
+})

@@ -22,19 +22,19 @@
     <main>
       <form action="#" class="flex column">
         <section class="flex">
-          <input type="text" placeholder="Adicione um novo item" />
-          <button>Adicionar item</button>
+          <input type="text" placeholder="Adicione um novo item" id="textItem" />
+          <button id="addItem">Adicionar item</button>
         </section>
       </form>
 
-      <ul>
-        <li>
+      <ul id="itens">
+        <li id="newItem" class="hidden">
           <input type="checkbox" id="checkbox" style="display: none" />
           <label for="checkbox">
             <img src="assets/icons/state=Default.svg" alt="" class="img" />
-            <p>Teste</p>
+            <p id="buttonText"></p>
           </label>
-          <button>
+          <button id="remove">
             <svg
               width="32"
               height="32"
