@@ -2,9 +2,7 @@ main {
   margin-top: 60px;
   & form {
     & section {
-      gap: 16px;
-      display: flex;
-      flex-direction: column;
+      /* margin-block: 16px; */
 
       & input {
         display: block;
@@ -15,6 +13,7 @@ main {
         background-color: var(--bg-primary);
         border: 2px solid var(--border-primary);
         border-radius: 12px;
+        margin-bottom: 16px;
       }
 
       & button {
@@ -51,23 +50,8 @@ main {
       border: none;
       cursor: pointer;
 
-      & svg {
-
-        path {
-          border: 1px solid red;
-        }
-      }
-    }
-
-    &:hover .img {
-      content: url(assets/icons/state=hover.svg);
-      /* border: 1px solid red; */
-      cursor: pointer;
-    }
-
-    & input {
-      &:checked + label .img {
-        content: url(assets/icons/state=selected.svg);
+      & svg:hover path {
+        stroke: var(--color-danger);
       }
     }
 
@@ -80,7 +64,104 @@ main {
   }
 }
 
+.hover {
+  content: url(assets/icons/state=hover.svg);
+}
+.checked {
+  content: url(assets/icons/state=selected.svg);
+}
+
+#msg {
+  color: red;
+}
+
+.remove {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: var(--color-danger);
+  border-radius: 12px;
+  margin-top: 16px;
+  animation: opacity 3500ms, descale 4s 500ms;
+
+  & p {
+    margin-right: auto;
+    color: white;
+    font: var(--link);
+  }
+
+  & button {
+    background: none;
+    border: none;
+  }
+
+  & img {
+    /* border: 1px solid red; */
+    filter: brightness(100);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+    /* transform: scale(1); */
+  }
+
+  to {
+    opacity: 0.0;
+    /* transform: scale(0.1); */
+  }
+}
+
+@keyframes descale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.1);
+  }
+}
 
 .hidden {
   display: none;
+}
+
+@media (width >= 60em) {
+
+  section {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  #textItem {
+    width: 451px;
+    /* border: 1px solid red; */
+    display: inline;
+    margin-right: 16px;
+  }
+
+  #addItem {
+    display: inline;
+    width: 160px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    width: 627px;
+  }
+
+  div {
+    width: 627px;
+    margin: auto;
+  }
+
 }

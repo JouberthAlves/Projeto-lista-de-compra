@@ -14,6 +14,7 @@
   </head>
   <body>
     <header>
+      <img src="assets/icons/logo.svg" alt="">
       <nav>
         <a href="#" class="return"><- Voltar</a>
       </nav>
@@ -31,7 +32,7 @@
         <li id="newItem" class="hidden">
           <input type="checkbox" id="checkbox" style="display: none" />
           <label for="checkbox">
-            <img src="assets/icons/state=Default.svg" alt="" class="img" />
+            <img src="assets/icons/state=Default.svg" alt="" id="checkImg" />
             <p id="buttonText"></p>
           </label>
           <button id="remove">
@@ -65,7 +66,15 @@
             </svg>
           </button>
         </li>
+        <div id="deleteMsg" class="hidden remove">
+          <img src="assets/icons/warning-circle-filled.svg" alt="">
+          <p>O item foi removido da Lista</p>
+          <button id="removeMsg" class="removeMsg">
+            <img src="assets/icons/delete-small.svg" alt="">
+          </button>
+        </div>
       </ul>
+      
     </main>
 
     <script src="script.js"></script>
