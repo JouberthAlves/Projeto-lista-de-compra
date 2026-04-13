@@ -130,6 +130,10 @@ main {
 
 @media (width >= 60em) {
 
+  .desktop-only {
+    display: initial;
+  }
+
   section {
     display: flex;
     flex-direction: row;
